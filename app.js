@@ -11,7 +11,7 @@ const app = express();
 // app.use
 // app.listen
 
-// Set public folder
+// Setup static and middleware
 app.use(express.static('./public'));
 
 // Set requests
