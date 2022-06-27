@@ -1,28 +1,19 @@
-const http = require('http');
-const {readFileSync} = require('fs');
+const express = require('express');
 
-// Get all files
-const homePage = readFileSync('./index.html');
+const app = express();
 
-const server = http.createServer((req, res) => {
-    const url = req.url;
-    if (url === '/') {
+// app.get
+// app.post
+// app.put
+// app.delete
+// app.all
+// app.use
+// app.listen
 
-        res.writeHead(200, {'content-type': 'text/html'});
-        res.write(homePage);
-        res.end();
-    } else if (url === '/about') {
-        res.writeHead(200, {'content-type': 'text/html'});
-        res.write('<h1>About Page</h1>');
-        res.end();
-    } else {
-        res.writeHead(404, {'content-type': 'text/html'});
-        res.write('<h1>Oops! Page not found</h1>');
-        res.end();
-    };
+app.get('/', async (req, res) => {
+    await res.send('Home Page');
 });
 
-
- server.listen(5000, () => {
-    console.log('Server listening on port 5000...');
- });
+app.listen(5000, () => {
+    console.log('Server is listening on port 5000...');
+});
