@@ -10,7 +10,7 @@ const products = [
         id: 2,
         name: 'entertainment center',
         image: 'N/A',
-        price: 3,
+        price: 29.98,
         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non curabitur gravida arcu ac tortor dignissim convallis aenean et.'
     },
     {
