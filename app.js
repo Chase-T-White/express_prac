@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
@@ -10,8 +11,12 @@ const app = express();
 // app.use
 // app.listen
 
+// Set public folder
+app.use(express.static('./public'));
+
+// Set requests
 app.get('/', (req, res) => {
-    res.status(200).send('Home Page');
+    res.sendFile(path.resolve(__dirname, './index.html'));
 });
 
 app.get('/about', (req, res) => {
